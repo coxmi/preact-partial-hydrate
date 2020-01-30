@@ -1,0 +1,56 @@
+{
+  "name": "preact-partial-hydrate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/michaeland/preact-partial-hydrate",
+  "author": "Michael Cox <michael@se-make.co.uk>",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "dependencies": {
+    "preact": "^10.2.1"
+  },
+  "config": {
+    "webpack_input": "./src/client.js",
+    "webpack_output": "./dist"
+  },
+  "scripts": {
+    "webpack:watch": "webpack --watch --mode=development",
+    "webpack:build": "webpack --mode=production",
+    "watch": "yarn webpack:watch",
+    "build": "node scripts/static-ssr.js && yarn webpack:build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-transform-react-jsx": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/register": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "preact-render-to-string": "^5.1.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env"
+      ]
+    ],
+    "plugins": [
+      [ "@babel/plugin-transform-react-jsx", {
+          "pragma": "h",
+          "pragmaFrag": "Fragment"
+        }
+      ],
+      [ "module-resolver", {
+          "alias": {
+            "@": "./src",
+            "@pages": "./src/pages",
+            "@components": "./src/components"
+          }
+        }
+      ]
+    ]
+  }
+}

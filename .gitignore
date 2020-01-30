@@ -1,0 +1,17 @@
+
+# Ignore hidden system files
+*~
+.DS_Store
+*.DS_Store
+*[Tt]humbs.db
+*.Trashes
+
+
+# Ignore node modules and errors
+node_modules
+npm-debug.log
+yarn-error.log
+
+
+# Ignore anything in dist
+/dist
