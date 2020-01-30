@@ -16,6 +16,10 @@
 	const indexVDom = require('./../src/pages/index.js').Index()
 	const html = render(indexVDom, false, { pretty : true })
 
+
+	const distDir = path.join(__dirname, './../dist')
+	if (!fs.existsSync(distDir)) fs.mkdirSync(distDir)
+
 	fs.writeFile(path.join(__dirname, './../dist/index.html'), html, (err) => {
 	    if (err) return console.log(err);
 	})
