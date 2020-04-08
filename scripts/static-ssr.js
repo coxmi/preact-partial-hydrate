@@ -1,9 +1,10 @@
 // TODO: static site gen!
 
 
-// allow jsx and es6+
+// allow jsx and es6+, and ignore all jsx imported styles/assets
 
 	require('@babel/register')
+	require('ignore-styles')
 
 	const fs = require('fs')
 	const path = require('path')

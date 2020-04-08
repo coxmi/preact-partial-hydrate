@@ -1,5 +1,7 @@
 
-import { h, Fragment } from 'preact'
+import { h } from 'preact'
+import './style.less'
+import './style.scss'
 
 
 const randomHex = () => '#' + Math.floor(Math.random() * 16777215).toString(16)
@@ -13,7 +15,7 @@ const clickHandler = (event) => {
 
 export const Button = (props) => {
 	return (
-		<a href={props.href} target={props.target} onClick={clickHandler}>
+		<a className="button" href={props.href} target={props.target} onClick={clickHandler}>
 		  {props.children}
 		</a>
 	)	
